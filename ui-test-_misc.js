@@ -8,6 +8,10 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 			return browser.OLSKVisit(kDefaultRoute);
 		});
 
+		it('classes OLSKCommonIdentity', function () {
+			browser.assert.hasClass(ROCORootLink, 'OLSKCommonIdentity');
+		});
+
 		it('sets href', function () {
 			browser.assert.attribute(ROCORootLink, 'href', 'https://rosano.ca');
 		});
