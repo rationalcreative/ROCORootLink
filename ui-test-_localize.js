@@ -1,25 +1,27 @@
 import { deepEqual } from 'assert';
 
-const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
+require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRoute) {
 
-kDefaultRoute.OLSKRouteLanguages.forEach(function (languageCode) {
+	kDefaultRoute.OLSKRouteLanguages.forEach(function (languageCode) {
 
-	const uLocalized = function (inputData) {
-		return OLSKTestingLocalized(inputData, languageCode);
-	};
+		const uLocalized = function (inputData) {
+			return OLSKTestingLocalized(inputData, languageCode);
+		};
 
-	describe(`ROCORootLink_Localize-${ languageCode }`, function () {
+		describe(`ROCORootLink_Localize-${ kDefaultRoute.OLSKRouteSignature }-${ languageCode }`, function () {
 
-		before(function() {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKRoutingLanguage: languageCode,
+			before(function() {
+				return browser.OLSKVisit(kDefaultRoute, {
+					OLSKRoutingLanguage: languageCode,
+				});
 			});
-		});
 
-		it('localizes title', function () {
-			browser.assert.attribute(ROCORootLink, 'title', uLocalized('ROCORootLinkText'));
+			it('localizes title', function () {
+				browser.assert.attribute(ROCORootLink, 'title', uLocalized('ROCORootLinkText'));
+			});
+
 		});
 
 	});
 
-});
+})

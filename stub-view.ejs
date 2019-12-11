@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+	<script type="text/javascript">
+		window.OLSKPublicConstants = function (inputData) {
+			return {
+				OLSKSharedPageCurrentLanguage: '<%= OLSKSharedPageCurrentLanguage %>',
+			}[inputData];
+		};
+	</script>
+</head>
 <body>
 
-<%- include('./main.ejs', ROCORootLinkStubParams) %>
+<% if (typeof ROCORootLinkStubParams !== 'undefined') { -%>
+
+<%- include('./main.ejs', ROCORootLinkStubParams) %>	
+
+<% } -%>
+
+<% if (typeof ROCORootLinkStubParams === 'undefined') { -%>
+
+<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
+
+<% } -%>
 
 </body>
 </html>

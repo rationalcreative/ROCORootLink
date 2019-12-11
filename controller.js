@@ -1,13 +1,22 @@
 exports.OLSKControllerRoutes = function() {
 	return [{
-		OLSKRoutePath: '/stub/ROCORootLink',
+		OLSKRoutePath: '/stub/ROCORootLinkEJS',
 		OLSKRouteMethod: 'get',
-		OLSKRouteFunction: function(req, res, next) {
+		OLSKRouteFunction (req, res, next) {
 			return res.render(require('path').join(__dirname, 'stub-view'), {
 				ROCORootLinkStubParams: req.query,
 			});
 		},
-		OLSKRouteSignature: 'ROCORootLinkStubRoute',
+		OLSKRouteSignature: 'ROCORootLinkEJSStubRoute',
+		OLSKRouteLanguages: ['en', 'fr', 'es'],
+		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
+	}, {
+		OLSKRoutePath: '/stub/ROCORootLinkSvelte',
+		OLSKRouteMethod: 'get',
+		OLSKRouteFunction (req, res, next) {
+			return res.render(require('path').join(__dirname, 'stub-view'));
+		},
+		OLSKRouteSignature: 'ROCORootLinkSvelteStubRoute',
 		OLSKRouteLanguages: ['en', 'fr', 'es'],
 		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 	}];

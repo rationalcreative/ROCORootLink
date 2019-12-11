@@ -1,7 +1,5 @@
 import { deepEqual } from 'assert';
 
-const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
-
 Object.entries({
 	ROCORootLink: '.ROCORootLink',
 	
@@ -10,18 +8,22 @@ Object.entries({
 	return global[e.shift()]  = e.pop();
 });
 
-describe('ROCORootLink_Access', function () {
+require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRoute) {
 
-	before(function() {
-		return browser.OLSKVisit(kDefaultRoute);
+	describe(`ROCORootLink_Access-${ kDefaultRoute.OLSKRouteSignature }`, function () {
+		
+		before(function() {
+			return browser.OLSKVisit(kDefaultRoute);
+		});
+		
+		it('shows ROCORootLink', function() {
+			browser.assert.elements(ROCORootLink, 1);
+		});
+		
+		it('shows ROCORootLinkImage', function() {
+			browser.assert.elements(ROCORootLinkImage, 1);
+		})
+		
 	});
 	
-	it('shows ROCORootLink', function() {
-		browser.assert.elements(ROCORootLink, 1);
-	});
-	
-	it('shows ROCORootLinkImage', function() {
-		browser.assert.elements(ROCORootLinkImage, 1);
-	});
-
-});
+})
