@@ -8,6 +8,6 @@ const OLSKLocalized = function(translationConstant) {
 };
 </script>
 
-<a class="ROCORootLink OLSKCommonIdentity" href={ ROCORootLinkAlternateURL || 'https://rosano.ca' } title={ ROCORootLinkAlternateText || OLSKLocalized('ROCORootLinkText') }>
+<a class="ROCORootLink OLSKCommonIdentity" href={ ROCORootLinkAlternateURL || 'https://rosano.ca' } title={ ROCORootLinkAlternateText || OLSKLocalized('ROCORootLinkTextRosano') }>
 	<img class="ROCORootLinkImage" role="presentation" src="/_shared/__external/ROCORootLink/identity.svg">
 </a>
