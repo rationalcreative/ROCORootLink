@@ -8,50 +8,14 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 			return browser.OLSKVisit(kDefaultRoute);
 		});
 
-		it('classes OLSKCommonIdentity', function () {
-			browser.assert.hasClass(ROCORootLink, 'OLSKCommonIdentity');
-		});
-
-		it('sets href', function () {
-			browser.assert.attribute(ROCORootLink, 'href', 'https://rosano.ca');
-		});
-
-		describe('ROCORootLinkImage', function () {
+		describe('OLSKRootLink', function () {
 			
-			it('sets role', function () {
-				browser.assert.attribute(ROCORootLinkImage, 'role', 'presentation');
+			it('sets OLSKRootLinkURL', function () {
+				browser.assert.attribute('.OLSKRootLink', 'href', 'https://rosano.ca');
 			});
 		
-			it('sets src', function () {
-				browser.assert.attribute(ROCORootLinkImage, 'src', '/_shared/__external/ROCORootLink/identity.svg');
-			});
-		
-		});
-
-		describe('ROCORootLinkAlternateText', function () {
-
-			before(function () {
-				return browser.OLSKVisit(kDefaultRoute, {
-					ROCORootLinkAlternateText: 'alfa',
-				});
-			});
-			
-			it('binds title', function () {
-				browser.assert.attribute(ROCORootLink, 'title', 'alfa');
-			});
-		
-		});
-
-		describe('ROCORootLinkAlternateURL', function () {
-
-			before(function () {
-				return browser.OLSKVisit(kDefaultRoute, {
-					ROCORootLinkAlternateURL: 'alfa',
-				});
-			});
-			
-			it('binds href', function () {
-				browser.assert.attribute(ROCORootLink, 'href', 'alfa');
+			it('sets OLSKRootLinkImageURL', function () {
+				browser.assert.attribute('.OLSKRootLinkImage', 'src', '/_shared/__external/ROCORootLink/identity.svg');
 			});
 		
 		});

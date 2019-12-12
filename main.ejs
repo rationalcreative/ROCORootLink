@@ -1,3 +1,9 @@
-<a class="ROCORootLink OLSKCommonIdentity" href="<%= typeof ROCORootLinkAlternateURL !== 'undefined' ? ROCORootLinkAlternateURL : 'https://rosano.ca' %>" title="<%= typeof ROCORootLinkAlternateText !== 'undefined' ? ROCORootLinkAlternateText : OLSKLocalized('ROCORootLinkTextRosano') %>">
-	<img class="ROCORootLinkImage" role="presentation" src="/_shared/__external/ROCORootLink/identity.svg">
-</a>
+<div class="ROCORootLink">
+
+<%- include('../OLSKRootLink/main.ejs', {
+	OLSKRootLinkURL: 'https://rosano.ca',
+	OLSKRootLinkImageURL: '/_shared/__external/ROCORootLink/identity.svg',
+	OLSKRootLinkTextAlternate: OLSKLocalized('ROCORootLinkText'),
+}) %>
+
+</div>
