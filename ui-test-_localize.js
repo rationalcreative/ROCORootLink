@@ -1,16 +1,16 @@
 require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRoute) {
 
-	kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (languageCode) {
+	kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 
 		const uLocalized = function (inputData) {
-			return OLSKTestingLocalized(inputData, languageCode);
+			return OLSKTestingLocalized(inputData, OLSKRoutingLanguage);
 		};
 
-		describe(`ROCORootLink_Localize-${ kDefaultRoute.OLSKRouteSignature }-${ languageCode }`, function () {
+		describe(`ROCORootLink_Localize-${ kDefaultRoute.OLSKRouteSignature }-${ OLSKRoutingLanguage }`, function () {
 
 			before(function() {
 				return browser.OLSKVisit(kDefaultRoute, {
-					OLSKRoutingLanguage: languageCode,
+					OLSKRoutingLanguage,
 				});
 			});
 
