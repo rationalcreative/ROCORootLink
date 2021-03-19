@@ -1,7 +1,5 @@
 Object.entries({
 	ROCORootLink: '.ROCORootLink',
-	
-	OLSKRootLink: '.OLSKRootLink',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
