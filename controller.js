@@ -8,7 +8,7 @@ exports.OLSKControllerRoutes = function() {
 			});
 		},
 		OLSKRouteSignature: 'ROCORootLinkEJSStubRoute',
-		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt'],
+		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt', 'de'],
 		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 	}, {
 		OLSKRoutePath: '/stub/ROCORootLinkSvelte',
@@ -17,7 +17,7 @@ exports.OLSKControllerRoutes = function() {
 			return res.render(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'ROCORootLinkSvelteStubRoute',
-		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt'],
+		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt', 'de'],
 		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 	}];
 };
