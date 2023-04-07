@@ -13,11 +13,11 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		});
 		
 		it('shows ROCORootLink', function() {
-			browser.assert.elements(ROCORootLink, 1);
+			return browser.assert.elements(ROCORootLink, 1);
 		});
 		
 		it('shows OLSKRootLink', function() {
-			browser.assert.elements('.OLSKRootLink', 1);
+			return browser.assert.elements('.OLSKRootLink', 1);
 		})
 		
 	});

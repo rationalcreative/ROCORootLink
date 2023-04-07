@@ -9,11 +9,11 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		describe('OLSKRootLink', function () {
 			
 			it('sets OLSKRootLinkURL', function () {
-				browser.assert.attribute('.OLSKRootLink', 'href', 'https://rosano.ca');
+				return browser.assert.attribute('.OLSKRootLink', 'href', 'https://rosano.ca');
 			});
 		
 			it('sets OLSKRootLinkImageURL', function () {
-				browser.assert.attribute('.OLSKRootLinkImage', 'src', '/_shared/__external/ROCORootLink/identity.svg');
+				return browser.assert.attribute('.OLSKRootLinkImage', 'src', '/_shared/__external/ROCORootLink/identity.svg');
 			});
 		
 		});

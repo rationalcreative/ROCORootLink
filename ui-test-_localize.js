@@ -15,7 +15,7 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 			});
 
 			it('localizes OLSKRootLink', function () {
-				browser.assert.attribute('.OLSKRootLink', 'title', uLocalized('ROCORootLinkText'));
+				return browser.assert.attribute('.OLSKRootLink', 'title', uLocalized('ROCORootLinkText'));
 			});
 
 		});
